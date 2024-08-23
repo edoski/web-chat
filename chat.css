@@ -97,10 +97,11 @@ body > div {
     gap: 10px;
     background-color: lightslategray;
     border-radius: 15px;
+    box-sizing: border-box;
 }
 
 #chat-input {
-    min-width: 400px;
+    flex-grow: 1;
     padding: 10px;
     border-radius: 10px;
     border: none;
@@ -108,10 +109,12 @@ body > div {
 
 button {
     padding: 10px 20px;
+    margin: 0 10px;
     border-radius: 10px;
     border: none;
     color: #fffbf5;
     font-weight: bold;
+    font-size: 20px;
 }
 
 #logout-button {
@@ -124,27 +127,4 @@ button {
 
 #send-button {
     background-color: #45a29e;
-}
-
-/* Media Queries */
-@media (max-width: 600px) {
-    #login-hero {
-        font-size: 1.5rem;
-    }
-
-    #login-subtext {
-        font-size: 0.875rem;
-    }
-
-    input {
-        min-width: 100%;
-    }
-
-    #button-area {
-        flex-direction: column;
-    }
-
-    #login-button, #register-button {
-        width: 100%;
-    }
 }

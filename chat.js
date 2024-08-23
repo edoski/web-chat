@@ -109,4 +109,5 @@ function styleSentMessage(messageBubble, messageAuthor) {
 	messageBubble.style.alignSelf = "flex-end";
 	messageBubble.style.backgroundColor = "lightblue";
 	messageAuthor.style.alignSelf = "flex-end";
+	messageBubble.style.textAlign = "right";
 }
