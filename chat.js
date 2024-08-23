@@ -19,6 +19,10 @@ function getUser() {
 	return localStorage.getItem("username");
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+	if (!getUser()) window.location.href = "login.html";
+});
+
 const urlParams = new URLSearchParams(window.location.search);
 const chatParam = urlParams.get("chat");
 const chatRef = ref(db, `chats/${chatParam}`);

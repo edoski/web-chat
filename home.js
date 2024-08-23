@@ -9,6 +9,10 @@ const logoutButton = document.querySelector("#logout-button");
 const username = localStorage.getItem("username");
 userHero.textContent = `welcome, ${username}.`;
 
+document.addEventListener("DOMContentLoaded", () => {
+	if (!username) window.location.href = "login.html";
+});
+
 if (chatSelection) {
 	const usersRef = ref(db, "users/");
 	get(usersRef).then((snapshot) => {
