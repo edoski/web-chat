@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>baby-chat</title>
+</head>
+<body>
+    <div id="user-area">
+        <div id="user-info">
+            <img src="user-circle.svg" alt="user" id="user-icon">
+            <span id="user-name"></span>
+        </div>
+        <h1 id="user-hero">test-chat</h1>
+        <button id="logout-button">logout</button>
+    </div>
+    <div id="chat-area">
+        <div id="chat-window"></div>
+        <div id="input-area">
+            <button id="clear-button">clear</button>
+            <label for="chat-input">
+                <input type="text" name="chat" id="chat-input"/>
+            </label>
+            <button id="send-button">send</button>
+        </div>
+    </div>
+    <script type="module" src="chat.js"></script>
+</body>
+</html>
