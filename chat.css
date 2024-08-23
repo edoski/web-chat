@@ -48,6 +48,10 @@ body > div {
     color: #fffbf5;
 }
 
+#home-button {
+    background-color: #45a29e;
+}
+
 #logout-button {
     padding: 10px 20px;
     border-radius: 10px;

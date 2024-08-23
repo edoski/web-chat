@@ -1,5 +1,5 @@
-import {dbRef} from "./firebase-init.js";
-import {onValue, push, remove, get} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js";
+import {onValue, push, remove, get, ref} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js";
+import {db} from "./firebase-init.js";
 
 const userHero = document.querySelector("#user-hero");
 const userName = document.querySelector("#user-name");
@@ -10,6 +10,7 @@ const chatWindow = document.querySelector("#chat-window");
 const chatInputField = document.querySelector("#chat-input");
 const sendButton = document.querySelector("#send-button");
 const clearButton = document.querySelector("#clear-button");
+const homeButton = document.querySelector("#home-button");
 const logoutButton = document.querySelector("#logout-button");
 
 let initialRender = false;
@@ -18,18 +19,29 @@ function getUser() {
 	return localStorage.getItem("username");
 }
 
-get(dbRef).then((ss) => {
+const urlParams = new URLSearchParams(window.location.search);
+const chatParam = urlParams.get("chat");
+const chatRef = ref(db, `chats/${chatParam}`);
+
+const chatWith = chatParam.split("-").find((user) => user !== getUser());
+
+get(chatRef).then((ss) => {
 	if (ss.exists()) renderAll(Object.values(ss.val()));
 	userName.textContent = getUser();
+	userHero.textContent = `${getUser()} & ${chatWith}`;
 	initialRender = true;
 });
 
-onValue(dbRef, function (ss) {
+onValue(chatRef, function (ss) {
 	if (ss.exists() && initialRender) {
 		const messages = Object.values(ss.val());
 		const latestMessage = messages[messages.length - 1];
 		render(latestMessage.user, latestMessage.message, new Date(latestMessage.timestamp));
 	}
+});
+
+homeButton.addEventListener("click", () => {
+	window.location.href = "home.html";
 });
 
 logoutButton.addEventListener("click", () => {
@@ -46,7 +58,7 @@ chatInputField.addEventListener("keydown", (event) => {
 
 clearButton.addEventListener("dblclick", () => {
 	chatWindow.innerHTML = "";
-	remove(dbRef);
+	remove(chatRef);
 });
 
 function saveInput() {
@@ -57,7 +69,7 @@ function saveInput() {
 		message: message,
 		timestamp: new Date().toISOString()
 	};
-	push(dbRef, messageObject);
+	push(chatRef, messageObject);
 	chatInputField.value = "";
 }
 

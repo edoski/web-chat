@@ -1,10 +1,12 @@
 import {db} from "./firebase-init.js";
-import {ref, onValue, push, remove, get} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js";
+import {ref, push, get} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js";
 
 const usernameField = document.querySelector("#username-field");
 const passwordField = document.querySelector("#password-field");
 const loginButton = document.querySelector("#login-button");
 const registerButton = document.querySelector("#register-button");
+
+usernameField.focus();
 
 if (loginButton) {
 	loginButton.addEventListener("click", () => {
@@ -65,5 +67,5 @@ function login(username, password) {
 
 function proceedAfterLogin(username) {
 	localStorage.setItem("username", username);
-	window.location.href = "chat.html";
+	window.location.href = "home.html";
 }
