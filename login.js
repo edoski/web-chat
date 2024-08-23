@@ -13,6 +13,14 @@ if (loginButton) {
 		if (!username || !password) return;
 		login(username, password);
 	});
+
+	usernameField.addEventListener("keydown", (event) => {
+		if (event.key === "Enter") passwordField.focus();
+	});
+
+	passwordField.addEventListener("keydown", (event) => {
+		if (event.key === "Enter") loginButton.click();
+	});
 }
 
 if (registerButton) {
