@@ -20,7 +20,7 @@ body > div {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 5px;
     margin: 10px 10px 0 10px;
 }
 
@@ -29,6 +29,7 @@ body > div {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-left: 10px;
 }
 
 #user-icon {
@@ -66,7 +67,7 @@ body > div {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-    height: 70vh;
+    height: 100%;
     margin: 10px;
 }
 
@@ -123,10 +124,10 @@ button {
 
 #clear-button {
     background-color: #ff6f61;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 #send-button {
     background-color: #45a29e;
-    font-size: 10px;
+    font-size: 12px;
 }
