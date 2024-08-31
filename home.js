@@ -2,7 +2,8 @@ import {db, generalChatRef} from "./firebase-init.js";
 import {ref, push, get} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js";
 
 const userHero = document.querySelector("#user-hero");
-const chatSelection = document.querySelector("#chat-selection");
+// const chatSelection = document.querySelector("#chat-selection");
+const chatInput = document.querySelector("#chat-input");
 const joinButton = document.querySelector("#join-button");
 const logoutButton = document.querySelector("#logout-button");
 const generalButton = document.querySelector("#general-button");
@@ -32,7 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
 export let chatRef;
 
 function connectToChat() {
-	const chatWith = chatSelection.value;
+	// const chatWith = chatSelection.value;
+	const chatWith = chatInput.value;
 	if (chatWith === "chat") return;
 	chatRef = ref(db, `chats/${chatUID(username, chatWith)}`);
 	get(chatRef).then((snapshot) => {
