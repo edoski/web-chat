@@ -3,9 +3,9 @@ from = "/*"
 to = "/login.html"
 status = 200
 
-[build]
-command = "npm run build"
-publish = "."
+#[build]
+#command = "npm run build"
+#publish = "."
 
 [context.production.environment]
 FIREBASE_API_KEY = "${FIREBASE_API_KEY}"
