@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
 import { getDatabase, ref } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js";
-require('dotenv').config()
-const db = require('db')
+// require('dotenv').config()
+// const db = require('db')
 
 const firebaseConfig = {
 	// apiKey: process.env.FIREBASE_API_KEY,
