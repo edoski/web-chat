@@ -1,10 +1,11 @@
-import {db} from "./firebase-init.js";
+import {db, generalChatRef} from "./firebase-init.js";
 import {ref, push, get} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js";
 
 const userHero = document.querySelector("#user-hero");
 const chatSelection = document.querySelector("#chat-selection");
 const joinButton = document.querySelector("#join-button");
 const logoutButton = document.querySelector("#logout-button");
+const generalButton = document.querySelector("#general-button");
 
 const username = localStorage.getItem("username");
 userHero.textContent = `welcome, ${username}.`;
@@ -13,20 +14,20 @@ document.addEventListener("DOMContentLoaded", () => {
 	if (!username) window.location.href = "login.html";
 });
 
-if (chatSelection) {
-	const usersRef = ref(db, "users/");
-	get(usersRef).then((snapshot) => {
-		const data = snapshot.val();
-		for (const key in data) {
-			if (data[key].username !== username) {
-				const chatOption = document.createElement("option");
-				chatOption.textContent = data[key].username;
-				chatOption.value = data[key].username;
-				chatSelection.appendChild(chatOption);
-			}
-		}
-	});
-}
+// if (chatSelection) {
+// 	const usersRef = ref(db, "users/");
+// 	get(usersRef).then((snapshot) => {
+// 		const data = snapshot.val();
+// 		for (const key in data) {
+// 			if (data[key].username !== (username)) {
+// 				const chatOption = document.createElement("option");
+// 				chatOption.textContent = data[key].username;
+// 				chatOption.value = data[key].username;
+// 				chatSelection.appendChild(chatOption);
+// 			}
+// 		}
+// 	});
+// }
 
 export let chatRef;
 
@@ -52,6 +53,15 @@ if (logoutButton) {
 		window.location.href = "login.html";
 	});
 }
+
+// if (generalButton) {
+// 	generalButton.addEventListener("click", () => {
+// 		get(generalChatRef).then((snapshot) => {
+// 			if (!snapshot.exists()) push(generalChatRef, {messages: []});
+// 			window.location.href = "chat.html?chat=general";
+// 		});
+// 	});
+// }
 
 function chatUID(username, chatWith) {
 	return username < chatWith ?

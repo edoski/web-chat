@@ -67,3 +67,26 @@ html, body {
     font-weight: bold;
     cursor: pointer;
 }
+
+#general-button {
+    margin-top: 40px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-size: 16px;
+    border: none;
+    align-self: center;
+    box-sizing: border-box;
+    background-color: lightslategray;
+    color: #fffbf5;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+    width: 220px;
+    transition: width 0.3s;
+}
+
+#general-button:hover {
+    background-color: #fffbf5;
+    color: #45a29e;
+    width: 360px;
+}

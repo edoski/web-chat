@@ -8,17 +8,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <title>home</title>
+    <title>web-chat-home</title>
 </head>
 <body>
     <div id="main-container">
         <button id="logout-button">logout.</button>
         <h2 id="user-hero">welcome, ${user}.</h2>
-        <p class="bold">select below a user to chat with; <br> <em>don't be shy.</em></p>
-        <select name="chat" id="chat-selection" required>
-            <option value="chat">select chat...</option>
-        </select>
-        <button id="join-button">join!</button>
+        <p class="bold">search for a user to chat with; <br> <em>say hi!</em></p>
+        <input type="text" id="chat-input" placeholder="Enter username" required>
+<!--        <select name="chat" id="chat-selection" required>-->
+<!--            <option value="chat">select chat...</option>-->
+<!--        </select>-->
+        <button id="join-button">chat!</button>
+<!--        <button id="general-button">general chat.</button>-->
     </div>
     <script type="module" src="home.js"></script>
 </body>

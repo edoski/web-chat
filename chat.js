@@ -1,5 +1,5 @@
 import {onValue, push, remove, get, ref} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js";
-import {db} from "./firebase-init.js";
+import {db, generalChatRef} from "./firebase-init.js";
 
 const userHero = document.querySelector("#user-hero");
 const userName = document.querySelector("#user-name");
@@ -32,7 +32,8 @@ const chatWith = chatParam.split("-").find((user) => user !== getUser());
 get(chatRef).then((ss) => {
 	if (ss.exists()) renderAll(Object.values(ss.val()));
 	userName.textContent = getUser();
-	userHero.textContent = `${getUser()} & ${chatWith}`;
+	userHero.textContent = chatWith === "general" ?
+		`general-chat` : `${getUser()} & ${chatWith}`;
 	initialRender = true;
 });
 
