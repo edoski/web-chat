@@ -6,3 +6,6 @@ status = 200
 [build]
 command = "npm run build"
 publish = "."
+
+[[plugins]]
+package = "@netlify/plugin-inline-functions-env"
