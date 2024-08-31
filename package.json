@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "db": "^6.0.3",
-    "netlify-cli": "latest"
+    "netlify-cli": "latest",
+    "netlify-plugin-inline-functions-env": "^1.0.9"
   }
 }
