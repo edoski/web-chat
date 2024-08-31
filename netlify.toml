@@ -3,6 +3,5 @@ from = "/*"
 to = "/login.html"
 status = 200
 
-#[build]
-#publish = "build"
-#command = "npm run build"
+[build]
+command = "sed -i 's|DATABASE_URL_PLACEHOLDER|${FIREBASE_DATABASE_URL}|g' ./firebase-init.js && npm run build"
