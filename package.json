@@ -7,7 +7,7 @@
   "scripts": {
     "build": "netlify build"
   },
-    "devDependencies": {
-        "netlify-cli": "latest"
-    }
+  "devDependencies": {
+    "netlify-cli": "latest"
+  }
 }
