@@ -4,7 +4,10 @@
     "dotenv": "^16.4.5",
     "firebase": "^10.13.0"
   },
-    "scripts": {
-      "build": "netlify build"
+  "scripts": {
+    "build": "netlify build"
+  },
+    "devDependencies": {
+        "netlify-cli": "latest"
     }
 }
