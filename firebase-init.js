@@ -1,14 +1,12 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
 import { getDatabase, ref } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js";
-// import * as dotenv from "dotenv";
-
-// Load environment variables from .env file
-// dotenv.config();
+require('dotenv').config()
+const db = require('db')
 
 const firebaseConfig = {
 	// apiKey: process.env.FIREBASE_API_KEY,
 	// authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-	databaseURL: "DATABASE_URL_PLACEHOLDER",
+	databaseURL: "__FIREBASE_DATABASE_URL__",
 	// projectId: process.env.FIREBASE_PROJECT_ID,
 	// storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
 	// messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,

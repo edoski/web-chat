@@ -8,6 +8,7 @@
     "build": "echo 'No build step required'"
   },
   "devDependencies": {
+    "db": "^6.0.3",
     "netlify-cli": "latest"
   }
 }

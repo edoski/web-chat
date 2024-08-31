@@ -4,5 +4,5 @@ to = "/login.html"
 status = 200
 
 [build]
-command = "sed -i 's|DATABASE_URL_PLACEHOLDER|${FIREBASE_DATABASE_URL}|g' ./firebase-init.js && npm run build"
+command = "npm run build"
 publish = "."
