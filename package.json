@@ -5,7 +5,7 @@
     "firebase": "^10.13.0"
   },
   "scripts": {
-    "build": "netlify build"
+    "build": "npm run build:firebase && npm run build:netlify"
   },
   "devDependencies": {
     "netlify-cli": "latest"
