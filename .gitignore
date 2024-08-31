@@ -1,4 +1,5 @@
 # Local Netlify folder
 .netlify
 .env
+netlify.toml
 /node_modules
