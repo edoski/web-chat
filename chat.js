@@ -1,8 +1,6 @@
 import {onValue, push, remove, get, ref} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js";
 import {db, generalChatRef} from "./firebase-init.js";
 
-require('dotenv').config();
-
 const userHero = document.querySelector("#user-hero");
 const userName = document.querySelector("#user-name");
 const userArea = document.querySelector("#user-area");
