@@ -1,11 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
 import { getDatabase, ref } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js";
 
-import dotenv from "https://cdn.skypack.dev/dotenv";
-export const config = dotenv.config();
-
 const firebaseConfig = {
-	databaseURL: process.env.FIREBASE_DATABASE_URL,
+	databaseURL: "https://web-chat-68f66-default-rtdb.europe-west1.firebasedatabase.app"
 };
 
 
